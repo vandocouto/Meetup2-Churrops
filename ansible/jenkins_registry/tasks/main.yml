@@ -1,0 +1,14 @@
+---
+# tasks file for churrops
+- import_playbook: basic.yml
+  tags: basic
+- import_playbook: hostname.yml
+  tags: hostname
+- import_playbook: docker.yml
+- import_playbook: swarm.yml
+  tags: swarm
+- import_playbook: certificate.yml
+- import_playbook: build.yml
+  tags: build
+#- import_playbook: kube.yml
+#  tags: kubernetes

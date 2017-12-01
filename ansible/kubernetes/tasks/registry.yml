@@ -1,0 +1,14 @@
+- name: "Hosts"
+  hosts: all
+  become: yes
+
+  tasks:
+
+  - name: "Docker | kubernetes registry"
+    shell: |
+     kubectl create secret docker-registry regsecret \
+     --docker-server={{registry}} \
+     --docker-username={{usereg}} \
+     --docker-password={{passreg}} \
+     --docker-email={{emailreg}}
+    ignore_errors: True

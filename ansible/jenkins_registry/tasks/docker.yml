@@ -1,0 +1,16 @@
+- name: "Hosts"
+  hosts: all
+  become: yes
+
+  tasks:
+
+   - name: "Docker | Create daemon.json"
+     template: src=../templates/daemon.json dest=/etc/docker/daemon.json owner=root mode=644 backup=yes
+
+   - name: "Docker | Enable Docker init.d"
+     service: name=docker enabled=yes
+     ignore_errors: yes
+
+   - name: "Docker | Restart Docker"
+     service: name=docker state=restarted
+     ignore_errors: yes

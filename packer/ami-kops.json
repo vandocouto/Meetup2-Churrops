@@ -1,0 +1,32 @@
+{
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "packer/kops.sh"
+    }
+  ],
+  "builders": [
+    {
+      "ssh_username": "ubuntu",
+      "communicator": "ssh",
+      "source_ami_filter": {
+        "most_recent": "true",
+        "filters": {
+          "root-device-type": "ebs",
+          "name": "*ubuntu-xenial-16.04-amd64-server-*",
+          "virtualization-type": "hvm"
+        }
+      },
+      "subnet_id": "subnet-2d75ed66",
+      "region": "us-east-1",
+      "ami_name": "Image-Docker-id-14",
+      "security_group_id": "sg-be45c3cb",
+      "instance_type": "t2.micro",
+      "ssh_private_ip": "false",
+      "associate_public_ip_address": "true",
+      "vpc_id": "vpc-0b4f2b73",
+      "type": "amazon-ebs",
+      "ssh_pty": "true"
+    }
+  ]
+}

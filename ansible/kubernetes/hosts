@@ -1,0 +1,9 @@
+[kubernetes]
+api.churrops.com
+
+[all:vars]
+ansible_ssh_user=ubuntu
+ansible_ssh_private_key_file=chaves/churrops.pem
+registry=https://registry.churrops.com
+usereg=churrops
+emailreg=vandocouto@gmail.com
