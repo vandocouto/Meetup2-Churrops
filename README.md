@@ -86,7 +86,7 @@ Clone do projeto:
     terraform apply
     
 Obs: Verifique no DNS (route53) os registros criados, ajuste o hosts/gmask o fqdn api.churrops.com. 
-<br><b>Aguarde alguns minutos, até que todos os registros estejam criados.</b>
+<br><b>Aguarde alguns minutos, os registros estaram sendo criados.</b>
 
 11 - Ajustando o fqdn api.churrops.com no hosts.
 
