@@ -15,7 +15,7 @@ Ambiente local:
     export AWS_SECRET_ACCESS_KEY=""
     export AWS_DEFAULT_REGION="us-east-1"
 
-2 - Criando o Bucket no S3
+2 - Criando o Bucket no S3 (project-kube)
 
     ./terraform/build.sh terraform/S3/ init
     ./terraform/build.sh terraform/S3/ plan
