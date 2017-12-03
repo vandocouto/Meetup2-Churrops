@@ -14,7 +14,6 @@ output "3" {
 //  value = "${aws_subnet.subnets.*.id}"
 //}
 
-
 output "4" {
   value = "${aws_subnet.subnets.id}"
 }
