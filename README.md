@@ -1,3 +1,5 @@
+# Criando um cluster Kubernetes 1.8.4 com o KOPS
+
 Ambiente local:
 
 * Ansible 2.4.1.0
@@ -7,30 +9,30 @@ Ambiente local:
 * Python 2.7.12
 * Terraform v0.10.8
 
-1 - Configurado o Access Keys e Secret Keys da AWS
+1 - Configurando o Access Keys/Secret Keys AWS
 
     export AWS_ACCESS_KEY_ID=""
     export AWS_SECRET_ACCESS_KEY=""
     export AWS_DEFAULT_REGION="us-east-1"
 
-2 - Criando o Bucket na AWS S3
+2 - Criando o Bucket no S3
 
     ./terraform/build.sh terraform/S3/ init
     ./terraform/build.sh terraform/S3/ plan
     ./terraform/build.sh terraform/S3/ apply
 
-3 - Gerando o par de chaves (privada - pública) 
+3 - Gerando o par de chaves (privada - pública) que será utilizado no projeto 
 
     ssh-keygen -b 4096 -t rsa -N '' -C docker -f chaves/churrops.pem
 
 
-4 - Criando a VPC kubernetes na AWS
+4 - Criando a VPC kubernetes
 
      ./terraform/build.sh terraform/VPC/ init
      ./terraform/build.sh terraform/VPC/ plan
      ./terraform/build.sh terraform/VPC/ apply
 
-5 - Criando a AMI (default e kops) na AWS
+5 - Criando a AMI (default e kops)
 
     python ./packer/ami.py default
     packer build -machine-readable packer/ami-default.json
@@ -41,7 +43,7 @@ Ambiente local:
     sh var-ami.sh
 
 
-6 - Criando a instância jenkins_registry (sg - ec2) na AWS
+6 - Criando a instância jenkins_registry (sg - ec2)
 
     ./terraform/build.sh terraform/jenkins_registry/sg/ init
     ./terraform/build.sh terraform/jenkins_registry/sg/ plan
@@ -59,7 +61,7 @@ Ambiente local:
 
     export JPASS="Defina senha aqui"
 
-8 - Deploy do container Jenkins e Registry na AWS
+8 - Deploy do container Jenkins e Registry
 
     python jenkins_regitry.py
     ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i ansible/jenkins_registry/hosts ansible/jenkins_registry/tasks/main.yml --extra-vars jenkinspass=$JPASS
@@ -70,7 +72,7 @@ Ambiente local:
     ./terraform/build.sh terraform/route53/ plan
     ./terraform/build.sh terraform/route53/ apply
 
-10 - Deploy do cluster Kubernetes com o Kops
+10 - Deploy do cluster Kubernetes com o Kops (3 masters - 3 nodes)
 
     sh kops/deploy.sh
     cd ./kopsKube
@@ -78,8 +80,8 @@ Ambiente local:
     terraform plan
     terraform apply
     
-Obs: Verifique no DNS (route53) os registros criados, ajuste no hosts ou gmask o fqdn api.churrops.com. 
-Aguarde alguns minutos até que todos os registros sejam criados.
+Obs: Verifique no DNS (route53) os registros criados, ajuste o hosts/gmask o fqdn api.churrops.com. 
+<b>Aguarde alguns minutos até que todos os registros estejam criados.</b>
 
 11 - Ajustando o fqdn api.churrops.com no hosts.
 
