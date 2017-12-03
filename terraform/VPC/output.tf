@@ -19,6 +19,9 @@ output "4" {
   value = "${aws_subnet.subnets.id}"
 }
 
+output "5" {
+  value = "${aws_vpc.vpc.cidr_block}"
+}
 
 
 
