@@ -2,6 +2,7 @@
 
 Ambiente local:
 
+* Linux Ubuntu 16.04
 * Ansible 2.4.1.0
 * Jenkins 2.73.3
 * Kops 1.7.0 
