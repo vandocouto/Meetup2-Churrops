@@ -9,6 +9,11 @@ Ambiente local:
 * Python 2.7.12
 * Terraform v0.10.8
 
+Clone do projeto:
+
+    git clone https://github.com/vandocouto/Meetup2-Churrops.git
+    cd Meetup2-Churrops
+
 1 - Configurando o Access Keys/Secret Keys AWS
 
     export AWS_ACCESS_KEY_ID=""
