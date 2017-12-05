@@ -117,14 +117,6 @@ Configure conforme as imagens abaixo:
 ![alt text](images/7.png#center)
 
 
-
-
-
-
-
-
-
-
 10 - Deploy do cluster Kubernetes com o Kops (3 masters - 3 nodes)
 
     sh kops/deploy.sh

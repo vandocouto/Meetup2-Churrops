@@ -35,7 +35,7 @@ output "region" {
 }
 
 output "vpc_id" {
-  value = "vpc-0b4f2b73"
+  value = "vpc-972551ef"
 }
 
 provider "aws" {
@@ -262,16 +262,16 @@ resource "aws_iam_role_policy" "nodes-churrops-com" {
   policy = "${file("${path.module}/data/aws_iam_role_policy_nodes.churrops.com_policy")}"
 }
 
-resource "aws_key_pair" "kubernetes-churrops-com-8b1b939c410e7fa799f41377359cc394" {
-  key_name   = "kubernetes.churrops.com-8b:1b:93:9c:41:0e:7f:a7:99:f4:13:77:35:9c:c3:94"
-  public_key = "${file("${path.module}/data/aws_key_pair_kubernetes.churrops.com-8b1b939c410e7fa799f41377359cc394_public_key")}"
+resource "aws_key_pair" "kubernetes-churrops-com-775893c934ee41427a0a3d6c0756bb19" {
+  key_name   = "kubernetes.churrops.com-77:58:93:c9:34:ee:41:42:7a:0a:3d:6c:07:56:bb:19"
+  public_key = "${file("${path.module}/data/aws_key_pair_kubernetes.churrops.com-775893c934ee41427a0a3d6c0756bb19_public_key")}"
 }
 
 resource "aws_launch_configuration" "master-us-east-1d-masters-churrops-com" {
   name_prefix                 = "master-us-east-1d.masters.churrops.com-"
-  image_id                    = "ami-d075e6aa"
+  image_id                    = "ami-44e2843e"
   instance_type               = "t2.micro"
-  key_name                    = "${aws_key_pair.kubernetes-churrops-com-8b1b939c410e7fa799f41377359cc394.id}"
+  key_name                    = "${aws_key_pair.kubernetes-churrops-com-775893c934ee41427a0a3d6c0756bb19.id}"
   iam_instance_profile        = "${aws_iam_instance_profile.masters-churrops-com.id}"
   security_groups             = ["${aws_security_group.masters-churrops-com.id}"]
   associate_public_ip_address = true
@@ -290,9 +290,9 @@ resource "aws_launch_configuration" "master-us-east-1d-masters-churrops-com" {
 
 resource "aws_launch_configuration" "master-us-east-1e-masters-churrops-com" {
   name_prefix                 = "master-us-east-1e.masters.churrops.com-"
-  image_id                    = "ami-d075e6aa"
+  image_id                    = "ami-44e2843e"
   instance_type               = "t2.micro"
-  key_name                    = "${aws_key_pair.kubernetes-churrops-com-8b1b939c410e7fa799f41377359cc394.id}"
+  key_name                    = "${aws_key_pair.kubernetes-churrops-com-775893c934ee41427a0a3d6c0756bb19.id}"
   iam_instance_profile        = "${aws_iam_instance_profile.masters-churrops-com.id}"
   security_groups             = ["${aws_security_group.masters-churrops-com.id}"]
   associate_public_ip_address = true
@@ -311,9 +311,9 @@ resource "aws_launch_configuration" "master-us-east-1e-masters-churrops-com" {
 
 resource "aws_launch_configuration" "master-us-east-1f-masters-churrops-com" {
   name_prefix                 = "master-us-east-1f.masters.churrops.com-"
-  image_id                    = "ami-d075e6aa"
+  image_id                    = "ami-44e2843e"
   instance_type               = "t2.micro"
-  key_name                    = "${aws_key_pair.kubernetes-churrops-com-8b1b939c410e7fa799f41377359cc394.id}"
+  key_name                    = "${aws_key_pair.kubernetes-churrops-com-775893c934ee41427a0a3d6c0756bb19.id}"
   iam_instance_profile        = "${aws_iam_instance_profile.masters-churrops-com.id}"
   security_groups             = ["${aws_security_group.masters-churrops-com.id}"]
   associate_public_ip_address = true
@@ -332,9 +332,9 @@ resource "aws_launch_configuration" "master-us-east-1f-masters-churrops-com" {
 
 resource "aws_launch_configuration" "nodes-churrops-com" {
   name_prefix                 = "nodes.churrops.com-"
-  image_id                    = "ami-d075e6aa"
+  image_id                    = "ami-44e2843e"
   instance_type               = "t2.micro"
-  key_name                    = "${aws_key_pair.kubernetes-churrops-com-8b1b939c410e7fa799f41377359cc394.id}"
+  key_name                    = "${aws_key_pair.kubernetes-churrops-com-775893c934ee41427a0a3d6c0756bb19.id}"
   iam_instance_profile        = "${aws_iam_instance_profile.nodes-churrops-com.id}"
   security_groups             = ["${aws_security_group.nodes-churrops-com.id}"]
   associate_public_ip_address = true
@@ -354,11 +354,11 @@ resource "aws_launch_configuration" "nodes-churrops-com" {
 resource "aws_route" "0-0-0-0--0" {
   route_table_id         = "${aws_route_table.churrops-com.id}"
   destination_cidr_block = "0.0.0.0/0"
-  gateway_id             = "igw-8f0167f6"
+  gateway_id             = "igw-1e80ea67"
 }
 
 resource "aws_route_table" "churrops-com" {
-  vpc_id = "vpc-0b4f2b73"
+  vpc_id = "vpc-972551ef"
 
   tags = {
     KubernetesCluster = "churrops.com"
@@ -383,7 +383,7 @@ resource "aws_route_table_association" "us-east-1f-churrops-com" {
 
 resource "aws_security_group" "masters-churrops-com" {
   name        = "masters.churrops.com"
-  vpc_id      = "vpc-0b4f2b73"
+  vpc_id      = "vpc-972551ef"
   description = "Security group for masters"
 
   tags = {
@@ -394,7 +394,7 @@ resource "aws_security_group" "masters-churrops-com" {
 
 resource "aws_security_group" "nodes-churrops-com" {
   name        = "nodes.churrops.com"
-  vpc_id      = "vpc-0b4f2b73"
+  vpc_id      = "vpc-972551ef"
   description = "Security group for nodes"
 
   tags = {
@@ -503,7 +503,7 @@ resource "aws_security_group_rule" "ssh-external-to-node-0-0-0-0--0" {
 }
 
 resource "aws_subnet" "us-east-1d-churrops-com" {
-  vpc_id            = "vpc-0b4f2b73"
+  vpc_id            = "vpc-972551ef"
   cidr_block        = "10.0.1.0/24"
   availability_zone = "us-east-1d"
 
@@ -515,7 +515,7 @@ resource "aws_subnet" "us-east-1d-churrops-com" {
 }
 
 resource "aws_subnet" "us-east-1e-churrops-com" {
-  vpc_id            = "vpc-0b4f2b73"
+  vpc_id            = "vpc-972551ef"
   cidr_block        = "10.0.2.0/24"
   availability_zone = "us-east-1e"
 
@@ -527,7 +527,7 @@ resource "aws_subnet" "us-east-1e-churrops-com" {
 }
 
 resource "aws_subnet" "us-east-1f-churrops-com" {
-  vpc_id            = "vpc-0b4f2b73"
+  vpc_id            = "vpc-972551ef"
   cidr_block        = "10.0.3.0/24"
   availability_zone = "us-east-1f"
 
