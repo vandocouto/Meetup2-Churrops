@@ -10,7 +10,7 @@ NAME=churrops.com
 NET=weave
 
 VPC_ID=$(./terraform/build.sh terraform/VPC/ output | grep -i vpc-* | cut -d" " -f3)
-NETWORK_CIDR=10.0.0.0/21
+NETWORK_CIDR=$(./terraform/build.sh terraform/VPC/ output | grep -i "5 =" | cut -d" " -f3)
 AMI=$(cat kops/ami_kops.txt)
 
 MASTERINST=3
