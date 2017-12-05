@@ -136,6 +136,9 @@ Exemplo: (/etc/hosts)
     IP   api.churrops.com
     
 
+![alt text](images/kubernetes1.png#center)
+    
+
 12 - Criando o secret docker-registry (regsecret) no cluster Kubernetes
 
     cd ../
