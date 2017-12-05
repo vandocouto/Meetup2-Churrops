@@ -1,3 +1,3 @@
 variable "ami" {
-  default = "ami-5176e52b"
+  default = "ami-38e48242"
 }

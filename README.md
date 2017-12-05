@@ -40,6 +40,11 @@ Clone do projeto:
 
 5 - Criando a AMI (default e kops)
 
+* AMI default - será utilizada para a instância jenkins_registry
+
+* AMI kops - será utilizada para as instâncias do cluster Kubernetes
+
+
     python ./packer/ami.py default
     packer build -machine-readable packer/ami-default.json
 
@@ -77,6 +82,48 @@ Clone do projeto:
     ./terraform/build.sh terraform/route53/ init
     ./terraform/build.sh terraform/route53/ plan
     ./terraform/build.sh terraform/route53/ apply
+
+
+Configurando o Jenkins Churrops
+
+Execute o comando abaixo:
+
+    ./terraform/build.sh terraform/jenkins_registry/ec2/ output | grep "1 ="
+    
+Ajuste o IP no hosts/gmask, exemplo:
+
+    34.234.194.189	jenkins.churrops.com registry.churrops.com
+    
+Acesse o Jenkins <b>http://jenkins.churrops.com:8080</b>
+
+Configure conforme as imagens abaixo:
+
+![alt text](images/login1.png#center "Login")
+
+![alt text](images/login2.png#center "Login")
+
+![alt text](images/login3.png#center "Login")
+
+![alt text](images/1.png#center "Credentials")
+
+![alt text](images/2.png#center "Registry")
+
+![alt text](images/3.png#center "churropsPem")
+
+![alt text](images/4.png#center "Github")
+
+![alt text](images/6.png#center "Credentials")
+
+![alt text](images/7.png#center)
+
+
+
+
+
+
+
+
+
 
 10 - Deploy do cluster Kubernetes com o Kops (3 masters - 3 nodes)
 

@@ -17,14 +17,14 @@
           "virtualization-type": "hvm"
         }
       },
-      "subnet_id": "subnet-2d75ed66",
+      "subnet_id": "subnet-94bed2df",
       "region": "us-east-1",
-      "ami_name": "Image-Docker-id-14",
-      "security_group_id": "sg-be45c3cb",
+      "ami_name": "Image-Docker-id-1",
+      "security_group_id": "sg-6c94e019",
       "instance_type": "t2.micro",
       "ssh_private_ip": "false",
       "associate_public_ip_address": "true",
-      "vpc_id": "vpc-0b4f2b73",
+      "vpc_id": "vpc-972551ef",
       "type": "amazon-ebs",
       "ssh_pty": "true"
     }

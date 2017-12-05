@@ -1,5 +1,5 @@
 [docker-engine]
-34.239.85.118  hostname=churrops
+34.234.194.189  hostname=churrops
 [all:vars]
 docker_swarm_port=2377
 ansible_ssh_user=ubuntu
@@ -8,4 +8,4 @@ ansible_ssh_private_key_file=chaves/churrops.pem
 ##
 registry=registry.churrops.com
 jenkinsuser=admin
-lan=10.0.0.104
+lan=10.0.0.69
