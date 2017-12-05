@@ -126,7 +126,7 @@ Configure conforme as imagens abaixo:
     terraform apply
     
 Obs: Verifique no DNS (route53) os registros criados, ajuste o hosts/gmask o fqdn api.churrops.com. 
-<br><b>Aguarde alguns minutos, os registros estaram sendo criados.</b>
+<br><b>Aguarde alguns minutos, até que todos os registro sejam criados.</b>
 
 11 - Ajustando o fqdn api.churrops.com no hosts.
 
@@ -194,6 +194,37 @@ Exemplo: (/etc/hosts)
 
     kubectl cluster-info
     kubectl cluster-info dump
+
+Configurando o primeiro Job no Jenkins
+
+Criando a credencial do slack
+
+![alt text](images/slack-credentials.png#center)
+
+Configurando o canal do slack 
+
+![alt text](images/slack-configuration-jenkins.png#center)
+
+Criando o Job Muiltibranch
+
+![alt text](images/job1.png#center)
+
+![alt text](images/job2.png#center)
+
+Executando o job 
+
+![alt text](images/jenkins-pipeline.png#center)
+
+Verificando o lb que foi criado na AWS
+
+![alt text](images/lb.png#center)
+
+Acessando a app pela Web
+
+![alt text](images/nginx.png#center)
+
+
+
     
 23 - Listando todos os containers (pods) dos projeto1-pd e projeto1-st
 Link do projeto: https://github.com/vandocouto/meetup-projeto1.git
