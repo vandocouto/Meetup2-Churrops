@@ -1,6 +1,6 @@
 # Criando um cluster Kubernetes 1.8.4 com o KOPS
 
-Ambiente local:
+### Ambiente local:
 
 * Linux Ubuntu 16.04
 * Ansible 2.4.1.0
@@ -10,7 +10,7 @@ Ambiente local:
 * Python 2.7.12
 * Terraform v0.10.8
 
-Clone do projeto:
+### Clone do projeto:
 
     git clone https://github.com/vandocouto/Meetup2-Churrops.git
     cd Meetup2-Churrops
@@ -84,7 +84,7 @@ Clone do projeto:
     ./terraform/build.sh terraform/route53/ apply
 
 
-Configurando o Jenkins Churrops
+### Configurando o Jenkins Churrops
 
 Execute o comando abaixo:
 
@@ -195,37 +195,35 @@ Exemplo: (/etc/hosts)
     kubectl cluster-info
     kubectl cluster-info dump
 
-Configurando o primeiro Job no Jenkins
+### Configurando o primeiro Job (churrops-projeto1 ) no Jenkins
 
-Criando a credencial do slack
+* Criando a credencial do slack
 
 ![alt text](images/slack-credentials.png#center)
 
-Configurando o canal do slack 
+* Configurando o canal do slack 
 
 ![alt text](images/slack-configuration-jenkins.png#center)
 
-Criando o Job Muiltibranch
+* Criando o Job Muiltibranch
 
 ![alt text](images/job1.png#center)
 
 ![alt text](images/job2.png#center)
 
-Executando o job 
+* Executando o job 
 
 ![alt text](images/jenkins-pipeline.png#center)
 
-Verificando o lb que foi criado na AWS
+* Verificando o lb que foi criado na AWS
 
 ![alt text](images/lb.png#center)
 
-Acessando a app pela Web
+* Acessando a app pela Web
 
 ![alt text](images/nginx.png#center)
 
 
-
-    
 23 - Listando todos os containers (pods) dos projeto1-pd e projeto1-st
 Link do projeto: https://github.com/vandocouto/meetup-projeto1.git
 
