@@ -98,6 +98,9 @@ Acesse o Jenkins <b>http://jenkins.churrops.com:8080</b>
 
 Configure conforme as imagens abaixo:
 
+* user: admin
+* pass: doort22017
+
 ![alt text](images/login1.png#center "Login")
 
 ![alt text](images/login2.png#center "Login")
