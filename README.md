@@ -1,4 +1,4 @@
-# Criando um cluster Kubernetes 1.8.4 com o KOPS
+# Criando um cluster Kubernetes 1.8.4 com o KOPS (Infra as Code)
 
 ### Ambiente local:
 
@@ -90,7 +90,8 @@ Execute o comando abaixo:
 
     ./terraform/build.sh terraform/jenkins_registry/ec2/ output | grep "1 ="
     
-Ajuste o IP no hosts/gmask, exemplo:
+Ajuste o IP no hosts/gmask. 
+Exemplo:
 
     34.234.194.189	jenkins.churrops.com registry.churrops.com
     
@@ -208,7 +209,7 @@ Exemplo: (/etc/hosts)
 
 ![alt text](images/slack-configuration-jenkins.png#center)
 
-* Criando o Job Muiltibranch
+* Criando o Job MultiBranch
 
 ![alt text](images/job1.png#center)
 
