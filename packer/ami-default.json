@@ -19,7 +19,7 @@
       },
       "subnet_id": "subnet-94bed2df",
       "region": "us-east-1",
-      "ami_name": "Image-Docker-id-66",
+      "ami_name": "Image-Docker-id-16",
       "security_group_id": "sg-6c94e019",
       "instance_type": "t2.micro",
       "ssh_private_ip": "false",

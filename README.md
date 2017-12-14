@@ -44,15 +44,15 @@
 
 * AMI kops - será utilizada para as instâncias do cluster Kubernetes
 
+<pre>
+python ./packer/ami.py default
+packer build -machine-readable packer/ami-default.json
 
-    python ./packer/ami.py default
-    packer build -machine-readable packer/ami-default.json
+python ./packer/ami.py kops
+packer build -machine-readable packer/ami-kops.json
 
-    python ./packer/ami.py kops
-    packer build -machine-readable packer/ami-kops.json
-
-    sh var-ami.sh
-
+sh var-ami.sh
+</pre>
 
 6 - Criando a instância jenkins_registry (sg - ec2)
 
